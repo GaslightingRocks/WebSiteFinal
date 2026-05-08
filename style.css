@@ -287,9 +287,6 @@ section + section {
 .blende-in {
   animation: blende 1s linear;
 }
-.blende-in-long{
-  animation: blende 2s linear;
-}
 
 /* Scroll-Animation: von links einschweben */
 @keyframes appear-x {
@@ -919,7 +916,7 @@ footer {
   
   /* Animationen zuweisen */
   animation: 
-    drawLines 3s ease-out forwards, 
+    drawLines 8s ease-out forwards, 
     fillColor 1s ease-in 0.5s forwards; /* Startet leicht verzögert */
 }
 .eye {
