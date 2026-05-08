@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="icon" type="image/svg+xml" href="./logo.svg">
+  <title>Contact - Alcedo Media </title>
+
+  
+<link rel="stylesheet" href="style.css">
+  <style>
+.socials {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.socials img {
+  width: 40px;
+  margin: 10px;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.socials img:hover {
+  transform: scale(1.2);
+}
+
+    /* Formular */
+    .container {
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 5px 5px 30px rgb(20, 4, 20);
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+      resize: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      background-color: #2a0e29;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="logo-container">
+  <img src="./logo.svg" alt="Alcedo Logo" class="centered-logo">
+</div>
+<h2 class="blendeIN top-label">Ihr Partner für Medienproduktion</h2>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a href="2.0MeineWebsite.html" class="home-button"><img src="./logo.svg" alt="Alcedo Logo" class="inline-logo"> Alcedo-Media</a>
+    <ul class="nav">
+      <li><a href="contact.html">Kontakt</a></li>
+    </ul>
+  </div>
+</div>
+
+
+  <!-- Kontaktformular -->
+  <div class="container blendeIN">
+    <h1>Contact</h1>
+
+    <form id="kontaktform" >
+      <label>Name</label>
+      <input type="text" name="name" placeholder="Your name" required>
+
+      <label>Email</label>
+      <input type="email" name="email" placeholder="your@email.com" required>
+
+      <label>Message</label>
+      <textarea name="message" rows="5" placeholder="Your message..." required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+  </div>
+
+
+  <script>
+  const form = document.getElementById("kontaktform");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const response = await fetch("https://formspree.io/f/xvzvwjoo", {
+      method: "POST",
+      body: new FormData(form),
+      headers: { "Accept": "application/json" }
+    });
+
+    if (response.ok) {
+      form.reset();
+      alert("✅ Nachricht gesendet! Ich melde mich so bald wie möglich.");
+    } else {
+      alert("❌ Etwas ist schiefgelaufen. Bitte versuche es erneut, oder kontaktieren sie mich direkt zufw@gmail.com.");
+    }
+  });
+</script>
+
+
+<a style="padding-bottom: 6rem;"></a>
+
+
+<footer>
+  <div class="footer-content">
+    <p>&copy; 2026 Alcedo Media</p>
+    <div class="footer-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>
